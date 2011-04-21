@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/stefan/projects/frozenCMS.rb/templates'
+let g:netrw_dirhist_2='/home/stefan/projects/frozenCMS.sc/tmp'
+let g:netrw_dirhist_3='/home/stefan/projects/frozenCMS2/frozenCMS2-susy/src'
+let g:netrw_dirhist_4='/home/stefan'
