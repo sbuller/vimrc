@@ -22,6 +22,11 @@ au! Syntax less source ~/.vim/syntax/less.vim
 
 inoremap jj <ESC>
 set listchars=tab:»▸,eol:¬
+set list
+
+set shiftwidth=3
+set tabstop=3
+set noexpandtab
 
 set relativenumber
 nnoremap <leader>r :set relativenumber<CR>
