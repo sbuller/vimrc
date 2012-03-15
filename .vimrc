@@ -11,7 +11,6 @@ filetype off
 filetype plugin indent on
 
 source ~/.vim/colemak.vim
-"source ~/.vim/haskell.vim
 
 au BufRead,BufNewFile *.dats set filetype=ats
 au BufRead,BufNewFile *.sats set filetype=ats
@@ -22,6 +21,11 @@ au! Syntax less source ~/.vim/syntax/less.vim
 
 inoremap jj <ESC>
 set listchars=tab:»▸,eol:¬
+set list
+
+set shiftwidth=3
+set tabstop=3
+set noexpandtab
 
 set relativenumber
 nnoremap <leader>r :set relativenumber<CR>
