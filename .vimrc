@@ -30,5 +30,6 @@ set noexpandtab
 set relativenumber
 nnoremap <leader>r :set relativenumber<CR>
 nnoremap <leader>n :set number<CR>
+nnoremap <leader>z :redraw!<CR>
 
 let g:haddock_browser = "/usr/bin/firefox"
