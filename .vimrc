@@ -1,3 +1,5 @@
+set t_Co=256
+
 let mapleader = ","
 set wrap
 set textwidth=72
@@ -22,6 +24,8 @@ au! Syntax less source ~/.vim/syntax/less.vim
 inoremap jj <ESC>
 set listchars=tab:»▸,eol:¬
 set list
+hi NonText ctermfg=236
+hi SpecialKey ctermfg=236
 
 set shiftwidth=3
 set tabstop=3
