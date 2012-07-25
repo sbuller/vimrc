@@ -1,39 +1,71 @@
+set nocompatible
+source ~/.vim/bundles.vim
+
+" Display {{{
 set t_Co=256
-
-let mapleader = ","
 set wrap
-set textwidth=72
-set formatoptions=qrn1
 set colorcolumn=80
+set relativenumber
+set lazyredraw		" don't redraw screen while executing macros/mappings
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set hlsearch		" highlight search patterns
+"}}}
 
-"prep pathogen
-call pathogen#runtime_append_all_bundles()
-"reload filetype plugins (in case pathogen has added new ones)
-filetype off
-filetype plugin indent on
+" Preferred tab style {{{
+set shiftwidth=3
+set tabstop=3
+set noexpandtab
+"}}}
 
-source ~/.vim/colemak.vim
+" Show non-printing characters, and dim them {{{
+set listchars=tab:»▸,eol:¬
+set list
+hi NonText ctermfg=240
+hi SpecialKey ctermfg=240
+"}}}
 
+" Auto-formatting of text {{{
+"set textwidth=72
+set formatoptions=qrn1
+"}}}
+
+" key customizations {{{
+let mapleader = ","
+nnoremap <leader>r :setlocal relativenumber<CR>
+nnoremap <leader>n :setlocal number<CR>
+nnoremap <leader><C-l> :redraw!<CR>
+nnoremap <leader>ev :tabedit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><tab> :tabn<cr>
+nnoremap <leader>nt :NERDTree<cr>
+nnoremap <leader>z z
+
+inoremap jj <ESC>
+"}}}
+
+" plugin specific stuff {{{
 au BufRead,BufNewFile *.dats set filetype=ats
 au BufRead,BufNewFile *.sats set filetype=ats
 au! Syntax ats source ~/.vim/syntax/ats.vim
 
 au BufRead,BufNewFile *.less set filetype=less
 au! Syntax less source ~/.vim/syntax/less.vim
+"}}}
 
-inoremap jj <ESC>
-set listchars=tab:»▸,eol:¬
-set list
-hi NonText ctermfg=240
-hi SpecialKey ctermfg=240
+" Misc settings (Mostly from colemak.vim) {{{
+set nostartofline	" keep cursor in the same column if possible
+set whichwrap=b,s,[,],<,>,h,l " allow cursor to wrap between lines
+set virtualedit=block	" allow virtual editing in Visual block mode
+set scrolloff=1		" minimal number of screen lines to keep above and below the cursor
+set incsearch		" enable incremental search
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set winaltkeys=no	" allow mapping of alt (meta) key shortcuts
+set smartcase		" ignore case when the pattern contains lowercase letters only
 
-set shiftwidth=3
-set tabstop=3
-set noexpandtab
+syntax on		" enable syntax highlighting
+"}}}
 
-set relativenumber
-nnoremap <leader>r :set relativenumber<CR>
-nnoremap <leader>n :set number<CR>
-nnoremap <leader>z :redraw!<CR>
+source ~/.vim/colemak.vim
 
-let g:haddock_browser = "/usr/bin/firefox"
+" vim: foldmethod=marker
