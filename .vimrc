@@ -38,8 +38,18 @@ nnoremap <leader><C-l> :redraw!<CR>
 nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader><tab> :tabn<cr>
-nnoremap <leader>nt :NERDTree<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>z z
+
+" Window handling: <C-w> is now <leader>w {{{
+nnoremap <leader>w <C-w>|xnoremap <leader>w <C-w>|
+" <leader>w<leader>w opens a new window
+nnoremap <leader>w<leader>w <C-w>n|xnoremap <leader>w<leader>w <C-w>n|
+nnoremap <leader>wn <C-w>h|xnoremap <leader>wn <C-w>h| 
+nnoremap <leader>wu <C-w>k|xnoremap <leader>wu <C-w>k| 
+nnoremap <leader>we <C-w>j|xnoremap <leader>we <C-w>j| 
+nnoremap <leader>wi <C-w>l|xnoremap <leader>wi <C-w>l| 
+"}}}
 
 inoremap jj <ESC>
 "}}}
