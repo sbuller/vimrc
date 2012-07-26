@@ -66,6 +66,13 @@ set smartcase		" ignore case when the pattern contains lowercase letters only
 syntax on		" enable syntax highlighting
 "}}}
 
+" NERDTree Remappings {{{
+let NERDTreeMapOpenSplit='<localleader>i'
+let NERDTreeMapUpdir='<localleader>u'
+let NERDTreeMapOpenExpl='<localleader>e'
+let NERDTreeMapActivateNode='<Space>'
+"}}}
+
 source ~/.vim/colemak.vim
 
 " vim: foldmethod=marker
