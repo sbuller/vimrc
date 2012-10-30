@@ -1,5 +1,6 @@
 set nocompatible
-source ~/.vim/bundles.vim
+"source ~/.vim/bundles.vim
+call pathogen#infect()
 
 " Display {{{
 set t_Co=256
