@@ -1,4 +1,5 @@
 set nocompatible
+filetype off
 "source ~/.vim/bundles.vim
 call pathogen#infect()
 
@@ -41,6 +42,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader><tab> :tabn<cr>
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>z z
+nnoremap <leader>a <C-a>
 
 " Window handling: <C-w> is now <leader>w {{{
 nnoremap <leader>w <C-w>|xnoremap <leader>w <C-w>|
@@ -85,5 +87,7 @@ let NERDTreeMapActivateNode='<Space>'
 "}}}
 
 source ~/.vim/colemak.vim
+
+filetype plugin indent on
 
 " vim: foldmethod=marker
