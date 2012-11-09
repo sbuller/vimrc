@@ -12,6 +12,7 @@ set lazyredraw		" don't redraw screen while executing macros/mappings
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set hlsearch		" highlight search patterns
+set background=dark
 "}}}
 
 " Preferred tab style {{{
