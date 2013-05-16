@@ -19,6 +19,7 @@ set background=dark
 set shiftwidth=3
 set tabstop=3
 set noexpandtab
+set cinoptions=g0
 "}}}
 
 " Show non-printing characters, and dim them {{{
@@ -44,6 +45,7 @@ nnoremap <leader><tab> :tabn<cr>
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>z z
 nnoremap <leader>a <C-a>
+nnoremap <leader>q :q<cr>
 
 " Window handling: <C-w> is now <leader>w {{{
 nnoremap <leader>w <C-w>|xnoremap <leader>w <C-w>|
@@ -65,6 +67,9 @@ au! Syntax ats source ~/.vim/syntax/ats.vim
 
 au BufRead,BufNewFile *.less set filetype=less
 au! Syntax less source ~/.vim/syntax/less.vim
+
+au BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
 "}}}
 
 " Misc settings (Mostly from colemak.vim) {{{
