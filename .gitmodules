@@ -34,3 +34,6 @@
 [submodule "bundle/qml"]
 	path = bundle/qml
 	url = git://github.com/peterhoeg/vim-qml.git
+[submodule "bundle/livescript"]
+	path = bundle/livescript
+	url = git://github.com/gkz/vim-ls
