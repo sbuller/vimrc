@@ -1,5 +1,9 @@
 set nocompatible
 filetype off
+
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+
 "source ~/.vim/bundles.vim
 call pathogen#infect()
 
@@ -43,6 +47,7 @@ nnoremap <leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader><tab> :tabn<cr>
 nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>ut :UndotreeToggle<cr>
 nnoremap <leader>z z
 nnoremap <leader>a <C-a>
 nnoremap <leader>q :q<cr>
