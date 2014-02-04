@@ -37,3 +37,6 @@
 [submodule "bundle/livescript"]
 	path = bundle/livescript
 	url = git://github.com/gkz/vim-ls
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = github:mbbill/undotree
