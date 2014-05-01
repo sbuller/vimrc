@@ -40,3 +40,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = github:mbbill/undotree
+[submodule "bundle/rust"]
+	path = bundle/rust
+	url = github:wting/rust.vim
