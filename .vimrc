@@ -1,8 +1,13 @@
 set nocompatible
 filetype off
+scriptencoding utf-8
+set encoding=utf-8
+
 
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"let g:js_context_colors_jsx = 1
+"let g:js_context_colors_allow_jsx_syntax = 1
 
 "source ~/.vim/bundles.vim
 call pathogen#infect()
@@ -17,6 +22,14 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set hlsearch		" highlight search patterns
 set background=dark
+
+
+" Powerline stuff
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+"set laststatus=2 " Always display the statusline in all windows
+"set noshowmode   " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 "}}}
 
 " Preferred tab style {{{
@@ -28,6 +41,7 @@ set cinoptions=g0
 
 " Show non-printing characters, and dim them {{{
 set listchars=tab:»▸,eol:¬
+"set listchars=tab:»-,eol:¬
 set list
 hi NonText ctermfg=240
 hi SpecialKey ctermfg=240
@@ -40,41 +54,58 @@ set formatoptions=qrn1
 
 " key customizations {{{
 let mapleader = ","
-nnoremap <leader>r :setlocal relativenumber<CR>
-nnoremap <leader>n :setlocal number<CR>
-nnoremap <leader><C-l> :redraw!<CR>
-nnoremap <leader>ev :tabedit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader><tab> :tabn<cr>
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>ut :UndotreeToggle<cr>
-nnoremap <leader>z z
+
+" Increment a number
 nnoremap <leader>a <C-a>
+nnoremap <leader>ev :tabedit $MYVIMRC<cr>
+nnoremap <leader>n :setlocal number<CR>
+nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>q :q<cr>
+nnoremap <leader>r :setlocal relativenumber<CR>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ut :UndotreeToggle<cr>
+
+" wrap words
+nnoremap <leader>"r ciw"<C-r>""<Esc>
+nnoremap <leader>'r ciw'<C-r>"'<Esc>
+nnoremap <leader>(r ciw(<C-r>")<Esc>
+nnoremap <leader><r ciw<<C-r>"><Esc>
+
+" Start a web server in the current directory
+"nnoremap <leader>1 :!nws<cr>
+" provide access to z for folding
+nnoremap <leader>z z
+nnoremap <leader><C-l> :redraw!<CR>
+nnoremap <leader><tab> :tabn<cr>
+
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>
+nnoremap <leader>ex :au! BufWritePost *.elm<CR>
 
 " Window handling: <C-w> is now <leader>w {{{
 nnoremap <leader>w <C-w>|xnoremap <leader>w <C-w>|
 " <leader>w<leader>w opens a new window
 nnoremap <leader>w<leader>w <C-w>n|xnoremap <leader>w<leader>w <C-w>n|
-nnoremap <leader>wn <C-w>h|xnoremap <leader>wn <C-w>h| 
-nnoremap <leader>wu <C-w>k|xnoremap <leader>wu <C-w>k| 
-nnoremap <leader>we <C-w>j|xnoremap <leader>we <C-w>j| 
-nnoremap <leader>wi <C-w>l|xnoremap <leader>wi <C-w>l| 
+nnoremap <leader>wn <C-w>h|xnoremap <leader>wn <C-w>h|
+nnoremap <leader>wu <C-w>k|xnoremap <leader>wu <C-w>k|
+nnoremap <leader>we <C-w>j|xnoremap <leader>we <C-w>j|
+nnoremap <leader>wi <C-w>l|xnoremap <leader>wi <C-w>l|
 "}}}
+
 
 inoremap jj <ESC>
 "}}}
 
 " plugin specific stuff {{{
-au BufRead,BufNewFile *.dats set filetype=ats
-au BufRead,BufNewFile *.sats set filetype=ats
-au! Syntax ats source ~/.vim/syntax/ats.vim
-
-au BufRead,BufNewFile *.less set filetype=less
-au! Syntax less source ~/.vim/syntax/less.vim
-
-au BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
+:au BufWritePost *.elm ElmMakeFile("Main.elm")
 "}}}
 
 " Misc settings (Mostly from colemak.vim) {{{
@@ -88,9 +119,14 @@ set winaltkeys=no	" allow mapping of alt (meta) key shortcuts
 set smartcase		" ignore case when the pattern contains lowercase letters only
 
 syntax on		" enable syntax highlighting
+
+autocmd BufRead,BufNewFile package.json setlocal et
 "}}}
 
 " NERDTree Remappings {{{
+
+set autochdir " Working dir always set based on active buffer
+let NERDTreeChDirMode=2 " ...?
 let NERDTreeMapOpenSplit='<localleader>i'
 let NERDTreeMapUpdir='<localleader>u'
 let NERDTreeMapOpenExpl='<localleader>e'
