@@ -31,3 +31,9 @@
 [submodule "bundle/rust"]
 	path = bundle/rust
 	url = github:wting/rust.vim
+[submodule "bundle/vim-js-context-coloring"]
+	path = bundle/vim-js-context-coloring
+	url = github:bigfish/vim-js-context-coloring
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = github:sheerun/vim-polyglot
