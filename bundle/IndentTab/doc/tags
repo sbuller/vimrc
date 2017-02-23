@@ -1,0 +1,14 @@
+IndentTab-configuration	IndentTab.txt	/*IndentTab-configuration*
+IndentTab-dependencies	IndentTab.txt	/*IndentTab-dependencies*
+IndentTab-description	IndentTab.txt	/*IndentTab-description*
+IndentTab-history	IndentTab.txt	/*IndentTab-history*
+IndentTab-ideas	IndentTab.txt	/*IndentTab-ideas*
+IndentTab-installation	IndentTab.txt	/*IndentTab-installation*
+IndentTab-integration	IndentTab.txt	/*IndentTab-integration*
+IndentTab-known-problems	IndentTab.txt	/*IndentTab-known-problems*
+IndentTab-limitations	IndentTab.txt	/*IndentTab-limitations*
+IndentTab-todo	IndentTab.txt	/*IndentTab-todo*
+IndentTab-usage	IndentTab.txt	/*IndentTab-usage*
+IndentTab.txt	IndentTab.txt	/*IndentTab.txt*
+IndentTab.vim	IndentTab.txt	/*IndentTab.vim*
+g:IndentTab_scopes	IndentTab.txt	/*g:IndentTab_scopes*
