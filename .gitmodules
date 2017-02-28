@@ -21,10 +21,10 @@
 	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "bundle/undotree"]
 	path = bundle/undotree
-	url = github:mbbill/undotree
+	url = https://github.com/mbbill/undotree
 [submodule "bundle/vim-js-context-coloring"]
 	path = bundle/vim-js-context-coloring
-	url = github:bigfish/vim-js-context-coloring
+	url = https://github.com/bigfish/vim-js-context-coloring
 [submodule "bundle/vim-polyglot"]
 	path = bundle/vim-polyglot
-	url = github:sheerun/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
