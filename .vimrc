@@ -22,6 +22,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set hlsearch		" highlight search patterns
 set background=dark
+set laststatus=2
 
 
 " Powerline stuff
