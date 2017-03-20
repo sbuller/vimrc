@@ -22,9 +22,6 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "bundle/vim-js-context-coloring"]
-	path = bundle/vim-js-context-coloring
-	url = https://github.com/bigfish/vim-js-context-coloring
 [submodule "bundle/vim-polyglot"]
 	path = bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
