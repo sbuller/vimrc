@@ -3,6 +3,13 @@ filetype off
 scriptencoding utf-8
 set encoding=utf-8
 
+if v:version >= 801
+	set termwinkey=<C-R>
+	tnoremap n <C-W>h
+	tnoremap e <C-W>k
+	tnoremap u <C-W>j
+	tnoremap i <C-W>l
+end
 
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
