@@ -98,6 +98,8 @@ vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>em :ElmMakeCurrentFile<CR>
 nnoremap <leader>ex :au! BufWritePost *.elm<CR>
 
+nnoremap <leader>m :make!<CR>
+
 " Window handling: <C-w> is now <leader>w {{{
 nnoremap <leader>w <C-w>|xnoremap <leader>w <C-w>|
 " <leader>w<leader>w opens a new window
